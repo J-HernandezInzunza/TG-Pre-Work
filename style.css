@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+.donate {
+    visibility: hidden;
+}
+
 ul {
     margin: 0;
     padding: 0;
