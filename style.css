@@ -32,8 +32,9 @@ body {
     #banner .content h1 {
         position: relative;
         top: 50px;
-        margin: 0 auto;
         width: 400px;
+        margin: 0 auto;
+        border: 3px solid white;
     }
 
 #main {
@@ -54,6 +55,7 @@ h2 {
     font-size: 14px;
     line-height: 48px;
     text-align: center;
+    border: 1px dotted red;
 }
 
 h3 {
@@ -70,7 +72,6 @@ p {
 }
 
 .pull-quote {
-    width: 350px;
 }
 
 .byline {
