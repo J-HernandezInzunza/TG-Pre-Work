@@ -9,3 +9,15 @@ h1 {
 .title {
     color: teal;
 }
+
+.green {
+    color: green;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
