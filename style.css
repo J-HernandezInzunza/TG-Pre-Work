@@ -1,11 +1,11 @@
 .grid {
     display: grid;
     border: 2px blue solid;
-    width: 400px;
     height: 500px;
-    grid-template-columns: 100px 50% 100px;
-    grid-template-rows: 150px 200px 50px;
-    grid-template: 1fr 1fr 1fr / 3fr 50% 1fr;
+    width: 500px;
+    grid-template-columns: 25% 25% 2fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-gap: 10px 15px;
 }
 
 .box {
@@ -13,4 +13,11 @@
     color: black;
     border-radius: 5px;
     border: 2px dodgerblue solid;
+}
+
+.a {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
