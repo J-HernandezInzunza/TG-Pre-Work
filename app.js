@@ -1,10 +1,18 @@
-//initialize kelvin variable
-let kelvin = 293;
-//celcius is 273 less than kelvin
-let celsius = kelvin - 273;
-//use equation to determine f
-let fahrenheit = ((celsius * (9 / 5)) + 32);
-//round down to nearest integer
-fahrenheit = Math.floor(fahrenheit);
+let myAge = 29;
+let earlyYears = 2;
 
-console.log("The temperature is " + fahrenheit + " degrees Fahrenheit.");
+earlyYears *= 10.5;
+let laterYears = myAge - 2;
+
+laterYears *= 4;
+
+console.log(earlyYears);
+console.log(laterYears);
+
+let myAgeInDogYears = earlyYears + laterYears;
+
+let myName = "Jose";
+myName = myName.toLowerCase();
+
+console.log("My name is " + myName + ". I am " + myAgeInDogYears + " old in dog years.")
+    ;
