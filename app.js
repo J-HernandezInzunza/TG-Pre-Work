@@ -1,15 +1,63 @@
-let raceNumber = Math.floor((Math.random() * 1000) + 1);
-let isEarly = true;
-let runnersAge = 10;
+const takeOrder = () => {
+    console.log("Order: pizza");
+};
 
-if (runnersAge >= 18 && isEarly) {
-    raceNumber += 1000;
-    console.log("Your race will begin at 9:30 am");
-    console.log("Your race number is: " + raceNumber);
-} else if (runnersAge >= 18 && isEarly === false) {
-    console.log("Late adults run at 11:00 am");
-    console.log("Your race number is: " + raceNumber);
-} else {
-    console.log("Youth registrants run at 12:30 pm");
-    console.log("Your race number is: " + raceNumber);
+takeOrder();
+
+const takeOrder = (topping) => {
+    console.log('Order: pizza topped with ' + topping);
+};
+
+takeOrder("mush");
+
+const takeOrder = (topping, crustType) => {
+    console.log("Order: " + crustType + " crust pizza topped with " + topping);
+};
+
+takeOrder('mushrooms', 'thin');
+takeOrder('mushrooms', 'deep');
+takeOrder('mushrooms', 'hand tossed');
+
+let orderCount = 0;
+
+const takeOrder = (topping, crustType) => {
+    orderCount++;
+    console.log('Order: ' + crustType + ' pizza topped with ' + topping);
+};
+
+const getSubTotal = (itemCount) => {
+    return itemCount * 7.5;
+};
+
+takeOrder('mushroom', 'thin crust');
+takeOrder('spinach', 'whole wheat');
+takeOrder('pepperoni', 'brooklyn style');
+console.log(getSubTotal(orderCount));
+
+
+let orderCount = 0;
+
+const takeOrder = (topping, crustType) => {
+    orderCount++;
+    console.log('Order: ' + crustType + ' pizza topped with ' + topping);
+};
+
+takeOrder('mushroom', 'thin crust');
+takeOrder('spinach', 'whole wheat');
+takeOrder('pepperoni', 'brooklyn style');
+
+const getSubTotal = (itemCount) => {
+    return itemCount * 7.5;
+};
+
+const getTax = (itemCount) => {
+    return getSubTotal(itemCount) * 0.06
 }
+
+const getTotal = (itemCount) => {
+    return getTax(itemCount) + getSubTotal(itemCount)
+}
+
+console.log(getSubTotal(orderCount));
+
+console.log(getTotal(orderCount))
