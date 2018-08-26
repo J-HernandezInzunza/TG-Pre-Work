@@ -13,6 +13,7 @@ h1, h2 {
     color: white;
     font-size: 28px;
     font-family: Georgia;
+    text-transform: uppercase;
 }
 
 h2 {
