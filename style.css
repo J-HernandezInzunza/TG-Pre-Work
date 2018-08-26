@@ -18,10 +18,12 @@ ul {
 }
 
 li {
+    display: inline-block;
     color: #FFF;
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     font-weight: 300;
+    width: 80px;
     text-transform: uppercase;
 }
 
@@ -84,7 +86,7 @@ footer {
     text-align: center;
     width: 100%;
     position: relative;
-    top: 200px;
+    top: 50px;
 }
 
 .question {
@@ -94,6 +96,7 @@ footer {
 }
 
 .answer {
+    display: inline-block;
     border: 1px solid #466995;
     margin: 20px;
 }
