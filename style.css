@@ -14,6 +14,7 @@ h1, h2 {
     font-size: 28px;
     font-family: Georgia;
     text-transform: uppercase;
+    text-align: center;
 }
 
 h2 {
