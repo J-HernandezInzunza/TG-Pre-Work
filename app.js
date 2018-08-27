@@ -1,57 +1,77 @@
-//Gobal Scope Variables
-const name = 'Nala';
+let newYearsResolutions = ['eat', 'eat more', 'eat the most'];
 
-// The scope of `random` is too loose 
+console.log(newYearsResolutions);
 
+let newYearsResolutions = ['eat', 'eat more', 'eat the most'];
+let listItem = newYearsResolutions[0];
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[3]);
 
-const getRandEvent = () => {
-    const random = Math.floor(Math.random() * 3);
-    if (random === 0) {
-        return 'Marathon';
-    } else if (random === 1) {
-        return 'Triathlon';
-    } else if (random === 2) {
-        return 'Pentathlon';
-    }
-};
+console.log(newYearsResolutions);
 
-// The scope of `days` is too tight 
-const getTrainingDays = event => {
-    let days;
-    if (event === 'Marathon') {
-        days = 50;
-    } else if (event === 'Triathlon') {
-        days = 100;
-    } else if (event === 'Pentathlon') {
-        days = 200;
-    }
+let newYearsResolutions = ['eat', 'eat more', 'eat the most'];
+let listItem = newYearsResolutions[0];
+/*
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[3]);
+console.log(newYearsResolutions);
+*/
 
-    return days;
-};
-
-// The scope of `name` is too tight 
-const logEvent = (name, event) => {
-
-    console.log(`${name}'s event is: ${event}`);
-};
-
-const logTime = (name, days) => {
-
-    console.log(`${name}'s time to train is: ${days} days`);
-};
-
-const event = getRandEvent();
-const days = getTrainingDays(event);
-// Define a `name` variable. Use it as an argument after updating logEvent and logTime 
+newYearsResolutions[1] = 'Learn a new language';
 
 
-logEvent(name, event);
-logTime(name, days);
+let newYearsResolutions = ['eat', 'eat more', 'eat the most'];
+let listItem = newYearsResolutions[0];
+/*
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[3]);
+console.log(newYearsResolutions);
+*/
 
-//Test for another competitor
-const event2 = getRandEvent();
-const days2 = getTrainingDays(event2);
-const name2 = 'Warren';
+newYearsResolutions[1] = 'Learn a new language';
+console.log(newYearsResolutions.length);
 
-logEvent(name2, event2);
-logTime(name2, days2);
+
+let newYearsResolutions = ['eat', 'eat more', 'eat the most'];
+let listItem = newYearsResolutions[0];
+/*
+console.log(listItem);
+console.log(newYearsResolutions[2]);
+console.log(newYearsResolutions[3]);
+console.log(newYearsResolutions);
+*/
+
+newYearsResolutions[1] = 'Learn a new language';
+newYearsResolutions.push('get yoked');
+newYearsResolutions.push('marry Helena');
+console.log(newYearsResolutions);
+console.log(newYearsResolutions.length);
+
+newYearsResolutions.pop();
+console.log(newYearsResolutions);
+
+
+let groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+
+groceryList.shift();
+//console.log(groceryList);
+groceryList.unshift('popcorn');
+//console.log(groceryList);
+console.log(groceryList.slice(1, 4));
+console.log(groceryList);
+
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+condiments.push('Salt');
+console.log(condiments);
+condiments = ['Salt'];
+console.log(condiments);
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+utensils.pop();
+console.log(utensils);
+utensils = ['Spork'];
+
+
+
