@@ -1,63 +1,45 @@
-const getSleepHours = (day) => {
-    day = day.toLowerCase();
-    switch (day) {
-        case 'monday':
-            return 7;
-            break;
-        case 'tuesday':
-            return 6;
-            break;
-        case 'wednesday':
-            return 6.5;
-            break;
-        case 'thursday':
-            return 6.5;
-            break;
-        case 'friday':
-            return 6;
-            break;
-        case 'saturday':
-            return 7.5;
-            break;
-        case 'sunday':
-            return 7;
-            break;
+const satellite = 'The Moon';
+const galaxy = 'The Milky Way';
+
+let stars = 'North Star';
+
+const myNightSky = () => {
+    stars = 'Sirius';
+    return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
+};
+
+console.log(myNightSky());
+console.log(stars);
+
+const visibleLightWaves = () => {
+    let lightWaves = 'Moonlight';
+    console.log(lightWaves);
+};
+
+visibleLightWaves();
+console.log(lightWaves);
+
+const visibleLightWaves = () => {
+    let lightWaves = 'Moonlight';
+    let region = 'The Arctic';
+    if (region === 'The Arctic') {
+        let lightWaves = 'Northern Lights';
+        console.log(lightWaves);
+    }
+    console.log(lightWaves);
+};
+
+visibleLightWaves();
+
+const starCount = () => {
+    let i = 5;
+    console.log(i);
+
+    for (i = 0; i < 12; i++) {
+        console.log(i);
     }
 };
 
-//console.log( getSleepHours('monday') );
-//console.log( getSleepHours('sunday') );
-//console.log( getSleepHours('friday') );
+starCount();
+console.log(i);
 
-const getActualSleepHours = () => {
-    return getSleepHours('monday') +
-        getSleepHours('tuesday') +
-        getSleepHours('wednesday') +
-        getSleepHours('thursday') +
-        getSleepHours('friday') +
-        getSleepHours('saturday') +
-        getSleepHours('sunday');
-};
-
-const getIdealSleepHours = () => {
-    let idealHours = 7;
-    return idealHours * 7;
-};
-
-//console.log(getActualSleepHours() );
-//console.log(getIdealSleepHours() );
-
-const calculateSleepDebt = () => {
-    actualSleepHours = getActualSleepHours();
-    idealSleepHours = getIdealSleepHours();
-
-    if (actualSleepHours === idealSleepHours) {
-        console.log("You currently get the perfect ammount of sleep.");
-    } else if (actualSleepHours < idealSleepHours) {
-        console.log("YOu should get some more rest.");
-    } else {
-        console.log("You are sleeping a bit too much.");
-    }
-};
-
-calculateSleepDebt();
