@@ -1,290 +1,70 @@
-let Airplane = {};
+//messagemixer.js info
+const MessageMixer = {};
 
-Airplane.myAirplane = 'StarJet';
-
-module.exports = Airplane; 
-
-
-const Airplane = require('./1-airplane.js');
-
-function displayAirplane() {
-    console.log(Airplane.myAirplane);
-}
-
-displayAirplane();
-
-const Airplane = require('./2-airplane.js');
-
-console.log(Airplane.displayAirplane());
-
-let Airplane = {};
-
-Airplane.availableAirplanes = [
-    {
-        name: 'AeroJet',
-        fuelCapacity: 800
-    },
-    {
-        name: 'SkyJet',
-        fuelCapacity: 500
+MessageMixer.countCharacter = function (inputString, inputCharacter) {
+    let count = 0;
+    let string = inputString.toLowerCase();
+    let character = inputCharacter.toLowerCase();
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === character) {
+            count++;
+        }
     }
-];
-
-export default Airplane;
-
-import Airplane from './airplane';
-
-function displayFuelCapacity() {
-    Airplane.availableAirplanes.forEach(function (element) {
-        console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
-    });
-}
-
-displayFuelCapacity();
-
-let flightRequirements = {
-    requiredStaff: 4
+    return count;
 };
 
-let availableAirplanes = [
-    {
-        name: 'AeroJet',
-        availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
-        fuelCapacity: 800
-    },
-    {
-        name: 'SkyJet',
-        availableStaff: ['pilots', 'flightAttendants'],
-        fuelCapacity: 500
+MessageMixer.capitalizeFirstCharacterOfWords = function (string) {
+    let arr = string.split(" ");
+    for (let i = 0; i < arr.length; i++) {
+        let word = arr[i];
+        arr[i] = word[0].toUpperCase() + word.substring(1);
     }
-];
-
-
-function meetsStaffRequirements(availableStaff, requiredStaff) {
-    if (availableStaff.length >= requiredStaff) {
-        return true;
-    } else {
-        return false;
-    }
+    return arr.join(" ");
 };
 
-export { availableAirplanes, flightRequirements, meetsStaffRequirements };
-
-import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './airplane';
-
-function displayFuelCapacity() {
-    availableAirplanes.forEach(function (element) {
-        console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
-    });
-}
-
-function displayStaffStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element.name + ' meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
-    });
-}
-
-displayFuelCapacity();
-displayStaffStatus();
-
-export let availableAirplanes = [
-    {
-        name: 'AeroJet',
-        fuelCapacity: 800,
-        availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
-        maxSpeed: 1200,
-        minSpeed: 300
-    },
-    {
-        name: 'SkyJet',
-        fuelCapacity: 500,
-        availableStaff: ['pilots', 'flightAttendants'],
-        maxSpeed: 800,
-        minSpeed: 200
-    }
-];
-
-export let flightRequirements = {
-    requiredStaff: 4,
-    requiredSpeedRange: 700
+MessageMixer.reverseWord = function (word) {
+    return word.split("").reverse().join("");
 };
 
-export function meetsStaffRequirements(availableStaff, requiredStaff) {
-    if (availableStaff.length >= requiredStaff) {
-        return true;
-    } else {
-        return false;
+MessageMixer.reverseAllWords = function (sentence) {
+    let words = sentence.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        words[i] = MessageMixer.reverseWord(words[i]);
     }
+    return words.join(" ");
 };
 
-export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange) {
-    let range = maxSpeed - minSpeed;
-    if (range > requiredSpeedRange) {
-        return true;
-    } else {
-        return false;
-    }
+MessageMixer.replaceFirstOccurence = function (string, toBeReplaced, replaceWith) {
+    return string.replace(toBeReplaced, replaceWith);
 };
 
-import { availableAirplanes, flightRequirements, meetsStaffRequirements, meetsSpeedRangeRequirements } from './airplane';
-
-function displayFuelCapacity() {
-    availableAirplanes.forEach(function (element) {
-        console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
-    });
-}
-
-displayFuelCapacity();
-
-function displayStaffStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element.name + ' meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
-    });
-}
-
-displayStaffStatus();
-
-function displaySpeedRangeStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element.name + ' meets speed range requirements:' + meetsSpeedRangeRequirements(element.maxSpeed, element.minSpeed, flightRequirements.requiredSpeedRange));
-    });
-}
-
-displaySpeedRangeStatus();
-
-
-let availableAirplanes = [
-    {
-        name: 'AeroJet',
-        fuelCapacity: 800,
-        availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
-        maxSpeed: 1200,
-        minSpeed: 300
-    },
-    {
-        name: 'SkyJet',
-        fuelCapacity: 500,
-        availableStaff: ['pilots', 'flightAttendants'],
-        maxSpeed: 800,
-        minSpeed: 200
-    }
-];
-
-let flightRequirements = {
-    requiredStaff: 4,
-    requiredSpeedRange: 700
+MessageMixer.replaceAllOccurrences = function (string, toBeReplaced, replaceWith) {
+    return string.split(toBeReplaced).join(replaceWith);
 };
 
-function meetsStaffRequirements(availableStaff, requiredStaff) {
-    if (availableStaff.length >= requiredStaff) {
-        return true;
-    } else {
-        return false;
+MessageMixer.encode = function (string) {
+    let replacementObject = { "a": "@", "s": "$", "i": "!", "o": "0" };
+    for (let key in replacementObject) {
+        string = MessageMixer.replaceAllOccurrences(string, key, replacementObject[key]);
     }
+    return string;
 };
 
-function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange) {
-    let range = maxSpeed - minSpeed;
-    if (range > requiredSpeedRange) {
-        return true;
-    } else {
-        return false;
-    }
-};
+module.exports = MessageMixer;
 
-export { availableAirplanes as aircrafts, flightRequirements as flightReqs, meetsStaffRequirements as meetsStaffReqs, meetsSpeedRangeRequirements as meetsSpeedRangeReqs };
 
-import { availableAirplanes, flightRequirements, meetsStaffRequirements, meetsSpeedRangeRequirements } from './airplane';
 
-function displayFuelCapacity() {
-    availableAirplanes.forEach(function (element) {
-        console.log('Fuel Capacity of ' + element['name'] + ': ' + element['fuelCapacity']);
-    });
+//message.js info
+const MessageMixer = require('./messageMixer.js');
+
+function displayMessage() {
+    console.log(MessageMixer.countCharacter("What is the color of the sky?", "t"));
+    console.log(MessageMixer.capitalizeFirstCharacterOfWords("What is the color of the sky?"));
+    console.log(MessageMixer.reverseWord("What is the color of the sky?"));
+    console.log(MessageMixer.reverseAllWords("What is the color of the sky?"));
+    console.log(MessageMixer.replaceFirstOccurence("What is the color of the sky?", "sky", "water"));
+    console.log(MessageMixer.encode("What is the color of the sky?"));
 }
 
-displayFuelCapacity();
 
-function displayStaffStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element['name'] + ' meets staff requirements: ' + meetsStaffRequirements(element['availableStaff'], flightRequirements['requiredStaff']));
-    });
-}
-
-displayStaffStatus();
-
-function displaySpeedRangeStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element['name'] + ' meets speed range requirements:' + meetsSpeedRangeRequirements(element['maxSpeed'], element['minSpeed'], flightRequirements['requiredSpeedRange']));
-    });
-}
-
-displaySpeedRangeStatus();
-
-export let availableAirplanes = [
-    {
-        name: 'AeroJet',
-        fuelCapacity: 800,
-        availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
-        maxSpeed: 1200,
-        minSpeed: 300
-    },
-    {
-        name: 'SkyJet',
-        fuelCapacity: 500,
-        availableStaff: ['pilots', 'flightAttendants'],
-        maxSpeed: 800,
-        minSpeed: 200
-    }
-];
-
-export let flightRequirements = {
-    requiredStaff: 4,
-    requiredSpeedRange: 700
-};
-
-export function meetsStaffRequirements(availableStaff, requiredStaff) {
-    if (availableStaff.length >= requiredStaff) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange) {
-    let range = maxSpeed - minSpeed;
-    if (range > requiredSpeedRange) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-export default meetsSpeedRangeRequirements;
-
-import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './airplane';
-
-import meetsSpeedRangeRequirements from './airplane';
-
-function displayFuelCapacity() {
-    availableAirplanes.forEach(function (element) {
-        console.log('Fuel Capacity of ' + element.name + ': ' + element['fuelCapacity']);
-    });
-}
-
-displayFuelCapacity();
-
-function displayStaffStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element.name + ' meets staff requirements: ' + meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff));
-    });
-}
-
-displayStaffStatus();
-
-function displaySpeedRangeStatus() {
-    availableAirplanes.forEach(function (element) {
-        console.log(element.name + ' meets speed range requirements:' + meetsSpeedRangeRequirements(element.maxSpeed, element.minSpeed, flightRequirements.requiredSpeedRange));
-    });
-}
-
-displaySpeedRangeStatus();
+displayMessage();
