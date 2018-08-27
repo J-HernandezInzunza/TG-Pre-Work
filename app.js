@@ -1,70 +1,63 @@
-const getUserChoice = (userInput) => {
-    userInput = userInput.toLowerCase();
-    if (userInput === 'rock' ||
-        userInput === 'paper' ||
-        userInput === 'scissors') {
-        //console.log(userInput);
-        return userInput;
+const getSleepHours = (day) => {
+    day = day.toLowerCase();
+    switch (day) {
+        case 'monday':
+            return 7;
+            break;
+        case 'tuesday':
+            return 6;
+            break;
+        case 'wednesday':
+            return 6.5;
+            break;
+        case 'thursday':
+            return 6.5;
+            break;
+        case 'friday':
+            return 6;
+            break;
+        case 'saturday':
+            return 7.5;
+            break;
+        case 'sunday':
+            return 7;
+            break;
+    }
+};
+
+//console.log( getSleepHours('monday') );
+//console.log( getSleepHours('sunday') );
+//console.log( getSleepHours('friday') );
+
+const getActualSleepHours = () => {
+    return getSleepHours('monday') +
+        getSleepHours('tuesday') +
+        getSleepHours('wednesday') +
+        getSleepHours('thursday') +
+        getSleepHours('friday') +
+        getSleepHours('saturday') +
+        getSleepHours('sunday');
+};
+
+const getIdealSleepHours = () => {
+    let idealHours = 7;
+    return idealHours * 7;
+};
+
+//console.log(getActualSleepHours() );
+//console.log(getIdealSleepHours() );
+
+const calculateSleepDebt = () => {
+    actualSleepHours = getActualSleepHours();
+    idealSleepHours = getIdealSleepHours();
+
+    if (actualSleepHours === idealSleepHours) {
+        console.log("You currently get the perfect ammount of sleep.");
+    } else if (actualSleepHours < idealSleepHours) {
+        console.log("YOu should get some more rest.");
     } else {
-        console.log("You Dun GOOFED!");
+        console.log("You are sleeping a bit too much.");
     }
 };
-//getUserChoice('balls');
 
-const getComputerChoice = () => {
-    let choice = Math.floor((Math.random() * 2) + 1)
-
-    if (choice === 0) {
-        return 'rock';
-    } else if (choice === 1) {
-        return 'paper';
-    } else if (choice === 2) {
-        return 'scissors';
-    }
-}
-
-const determineWinner = (userChoice, computerChoice) => {
-    if (userChoice === computerChoice) {
-        return "The game was a tie.";
-    }
-
-    if (userChoice = 'rock') {
-        if (computerChoice === 'paper') {
-            return "The computer wins this round!";
-        } else if (computerChoice === 'scissors') {
-            return "You won this round!";
-        }
-    }
-    if (userChoice = 'paper') {
-        if (computerChoice === 'scissors') {
-            return "The computer wins this round!";
-        } else if (computerChoice === 'rock') {
-            return "You won this round!";
-        }
-    }
-    if (userChoice = 'scissors') {
-        if (computerChoice === 'rock') {
-            return "The computer wins this round!";
-        } else if (computerChoice === 'paper') {
-            return "You won this round!";
-        }
-    }
-}
-
-const playGame = () => {
-    let userChoice = getUserChoice('rock');
-    console.log(userChoice);
-    let computerChoice = getComputerChoice();
-    console.log(computerChoice);
-    //determine winner
-    return determineWinner(userChoice, computerChoice);
-};
-
-console.log(playGame());
-//console.log(determineWinner( getUserChoice('rock') , getComputerChoice() ) );
-
-/*
-console.log (getComputerChoice());
-console.log (getComputerChoice());
-console.log (getComputerChoice());
-*/
+calculateSleepDebt();
