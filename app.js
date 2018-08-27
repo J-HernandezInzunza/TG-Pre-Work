@@ -1,221 +1,56 @@
 let person = {
-    name: 'Jose',
-    age: 29
+    _name: 'Lu Xun',
+    _age: 137,
+
+    set age(newAge) {
+        if (typeof newAge === 'number') {
+            this._age = newAge;
+            console.log(this.age);
+        } else {
+            return console.log('Invalid input');
+        }
+    }
 };
 
 let person = {
-    name: 'Jose',
-    age: 40
+    _name: 'Lu Xun',
+    _age: 137,
+
+    set age(newAge) {
+        if (typeof newAge === 'number') {
+            this._age = newAge;
+            console.log(this._age);
+        } else {
+            return console.log('Invalid input');
+        }
+    }
 };
-console.log(person.name);
+
+person.age = 'Thirty-nine';
+person.age = 39;
+
+let person = {
+    _name: 'Lu Xun',
+    _age: 137,
+
+    set age(newAge) {
+        if (typeof newAge === 'number') {
+            this._age = newAge;
+            console.log(this._age);
+        } else {
+            console.log('Invalid input');
+        }
+    },
+
+    get age() {
+        console.log(this._name + " is " + this._age + " years old.");
+        return this._age;
+    }
+};
+
+person.age = 'Thirty-nine';
+person.age = 39;
+let myAge = person._age;
+console.log(myAge);
 console.log(person.age);
-
-let person = {
-    name: 'Jose',
-    age: 40
-};
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM'
-};
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM'
-};
-
-person.hobbies = ['coding', 'studying'];
-console.log(person['hobbies']);
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM'
-};
-
-person.hobbies = ['coding', 'studying'];
-person.hobbies = ['coding'];
-console.log(person['hobbies']);
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM',
-    sayHello: () => {
-        return 'Hello, there!';
-    }
-};
-console.log(person.sayHello());
-person.hobbies = ['coding', 'studying'];
-person.hobbies = ['coding'];
-console.log(person['hobbies']);
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM',
-    sayHello: () => {
-        return 'Hello, there!';
-    },
-    sayGoodbye() {
-        return 'Goodbye!';
-    }
-};
-console.log(person.sayHello());
-console.log(person.sayGoodbye());
-person.hobbies = ['coding', 'studying'];
-person.hobbies = ['coding'];
-console.log(person['hobbies']);
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM',
-    sayHello() {
-        return 'Hello my name is ' + this.name;
-    },
-    sayGoodbye() {
-        return 'Goodbye!';
-    }
-};
-console.log(person.sayHello());
-console.log(person.sayGoodbye());
-person.hobbies = ['coding', 'studying'];
-person.hobbies = ['coding'];
-console.log(person['hobbies']);
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-
-let person = {
-    name: 'Jose',
-    age: 40,
-    weekendAlarm: 'No alarms needed',
-    weekAlarm: 'Alarm set to 7AM',
-    sayHello() {
-        return 'Hello my name is ' + this.name;
-    },
-    sayGoodbye() {
-        return 'Goodbye!';
-    }
-};
-//friend obj
-let friend = {
-    name: 'Helena'
-}
-friend.sayHello = person.sayHello;
-
-console.log(person.sayHello());
-console.log(person.sayGoodbye());
-person.hobbies = ['coding', 'studying'];
-person.hobbies = ['coding'];
-console.log(person['hobbies']);
-console.log(person.name);
-console.log(person['age']);
-console.log(person['name']);
-
-let day = 'Monday';
-let alarm;
-
-if (day === "Saturday" || day === "Sunday") {
-    alarm = 'weekendAlarm';
-} else {
-    alarm = 'weekAlarm';
-}
-
-console.log(person[alarm]);
-console.log(friend.sayHello());
 
