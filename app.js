@@ -1,50 +1,22 @@
-let vacationSpots = ['Italy', 'Japan', 'Canada'];
-console.log(vacationSpots[0]);
-console.log(vacationSpots[1]);
-console.log(vacationSpots[2]);
+let input = 'I Love Helena Marie Meijer';
+let vowels = ['A', 'E', 'I', 'O', 'U'];
 
-let vacationSpots = ['Mozambique', 'Thailand', 'Bolivia'];
+resultArray = [];
 
-for (let vacationSpotIndex = 0; vacationSpotIndex < vacationSpots.length; vacationSpotIndex++) {
-    console.log('I would love to visit ' + vacationSpots[vacationSpotIndex]);
-}
-
-
-let vacationSpots = ['Mozambique', 'Thailand', 'Bolivia'];
-
-for (let vacationSpotIndex = vacationSpots.length - 1; vacationSpotIndex >= 0; vacationSpotIndex--) {
-    console.log('I would love to visit ' + vacationSpots[vacationSpotIndex]);
-}
-
-console.log('I would love to visit ' + vacationSpots[vacationSpotIndex]);
-
-let myPlaces = ['tokyo', 'italy', 'seattle'];
-let friendPlaces = ['spain', 'tokyo', 'kansas'];
-
-for (let myPlacesIndex = 0; myPlacesIndex < myPlaces.length; myPlacesIndex++) {
-    //console.log(myPlaces[myPlacesIndex]);
-    for (let friendPlacesIndex = 0; friendPlacesIndex < friendPlaces.length; friendPlacesIndex++) {
-        if (myPlaces[myPlacesIndex] === friendPlaces[friendPlacesIndex]) {
-            console.log(myPlaces[myPlacesIndex]);
+for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < vowels.length; j++) {
+        if (input[i].toUpperCase() === vowels[j]) {
+            resultArray.push(input[i].toUpperCase());
         }
-        //console.log(friendPlaces[friendPlacesIndex]);
+    }
+    //store any 'e's again
+    if (input[i].toUpperCase() === 'E') {
+        resultArray.push(input[i].toUpperCase());
+    }
+    //store any 'u's again
+    if (input[i].toUpperCase() === 'U') {
+        resultArray.push(input[i].toUpperCase());
     }
 }
-
-let cards = ['Diamond', 'Spade', 'Heart', 'Club'];
-let currentCard = 'Diamond';
-
-while (currentCard != 'Spade') {
-    console.log(currentCard);
-    currentCard = cards[Math.floor(Math.random() * 4)];
-}
-console.log(currentCard); 
-
-let groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
-
-groceryList.shift();
-//console.log(groceryList);
-groceryList.unshift('popcorn');
-//console.log(groceryList);
-console.log(groceryList.slice(1, 4));
-console.log(groceryList);
+//console.log(resultArray);
+console.log(resultArray.join(''));
